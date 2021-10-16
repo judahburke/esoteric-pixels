@@ -6,5 +6,5 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-for i in $1; do { j=`echo "$i" | sed 'y/ ABCDEFGHIJKLMNOPQRSTUVWXYZ/-abcdefghijklmnopqrstuvwxyz/'`; mv "$i" "$j"; }; done
+for i in $1; do { j=`echo "$i" | sed 'y/ _ABCDEFGHIJKLMNOPQRSTUVWXYZ/--abcdefghijklmnopqrstuvwxyz/'`; mv "$i" "$j"; }; done
 
