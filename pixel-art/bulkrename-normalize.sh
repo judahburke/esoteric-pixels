@@ -6,5 +6,10 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-for i in $1; do { j=`echo "$i" | sed 'y/ _ABCDEFGHIJKLMNOPQRSTUVWXYZ/--abcdefghijklmnopqrstuvwxyz/'`; mv "$i" "$j"; }; done
+# if [ ! -d .backup ]; then mkdir .backup; fi
+
+for i in $1; do 
+    # cp "$i" ".backup/$i"
+    { j=`echo "$i" | sed 'y/ _ABCDEFGHIJKLMNOPQRSTUVWXYZ/--abcdefghijklmnopqrstuvwxyz/'`; mv "$i" "$j"; }
+done
 

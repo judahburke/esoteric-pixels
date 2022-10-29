@@ -5,5 +5,10 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
-for i in $1; do mv "$i" "$2$i"; done
+# if [ ! -d .backup ]; then mkdir .backup; fi
+
+for i in $1; do 
+    # cp "$i" ".backup/$i"
+    mv "$i" "$2$i"
+done
 
